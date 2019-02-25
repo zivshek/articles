@@ -44,7 +44,7 @@ However, there were several problems when I was implementing it.
 ## **Problem 3:** Network events, the evil one. 
 We are using the PhotonNetwork, and besides RPC, there is a convenient function to send an event over the network: 
 ``` C#
-  staic bool RaiseEvent(byte eventCode, object eventContent, bool sendReliable, RaiseEventOptions options)
+staic bool RaiseEvent(byte eventCode, object eventContent, bool sendReliable, RaiseEventOptions options)
 ``` 
 So whenever we ask the EventManager to queue a network event, it's gonna call this function, and it will also catch this event by registering itself to **PhotonNetwork.OnEventCall**, and then dispatches it to all listeners. I thought it was brilliant, until later I realized that PhotonNetwork could not serialize/deserialize custom types, not even Vector3, and I did a lot research and disappointly found that there is no easy way other than serializing and deserializing them myself. So everytime my group wants a new type of EventArgs, I would have to write these two functions manually:
 ``` C#
