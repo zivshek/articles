@@ -41,7 +41,7 @@ However, there were several problems when I was implementing it.
   }
 ```
 ********************************
-### **Problem 3:** Network events. 
+## **Problem 3:** Network events, the evil one. 
 We are using the PhotonNetwork, and besides RPC, there is a convenient function to send an event over the network: 
 ``` C#
   staic bool RaiseEvent(byte eventCode, object eventContent, bool sendReliable, RaiseEventOptions options)
