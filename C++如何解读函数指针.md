@@ -45,6 +45,7 @@ fp is a pointer to a function, that takes in an int* and a function pointer, wh
 void (*)(int) fp;
 // fp前面整个部分相当于一个type
 // 就如同
+int fp;
 ```
 
 说实话，我觉得解读函数指针的问题已经水落石出了，没法解释的更清楚了，再复杂也能按照这个逻辑去理解。当然，还有什么问题欢迎留言。第一次写B站专栏，体验不是很好:(，希望能早日支持Markdown。
